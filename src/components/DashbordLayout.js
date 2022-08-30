@@ -29,7 +29,9 @@ export default function DashbordLayout() {
   return (
     <>
       <Layout>
-        <Sider collapsible
+        <Sider 
+            breakpoint="lg"
+            collapsedWidth="0"
           theme={mode}
           onBreakpoint={(broken) => {
             console.log(broken);
@@ -85,13 +87,14 @@ export default function DashbordLayout() {
           <Content
             style={{
               margin: "0",
+              position: "relative"
             }}
           >
             <div
               className="site-layout-background"
               style={{ margin: 0, minHeight: 360 }}
             >
-              <MapCanvas />
+              <MapCanvas mode={mode}/>
             </div>
           </Content>
           <Footer

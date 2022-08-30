@@ -9,10 +9,16 @@
 
 .leaflet-container {
   width: 100%;
-  height: 100vh;
-
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  z-index: 0;
+  
 }
-
+html, body, #map {
+  height: 100%;
+  width: 100%;
+}
 
 .leaflet-control-zoom {
   display: none;
@@ -40,3 +46,13 @@
   background: #fff;
   height: 100%;
 }
+
+
+.control-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #fff;
+  z-index: 1;
+}
+
