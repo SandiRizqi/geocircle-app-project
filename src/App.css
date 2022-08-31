@@ -35,6 +35,7 @@ html, body, #map {
 .logo {
   height: 32px;
   margin: 16px;
+  text-align: center;
 
 }
 
@@ -64,3 +65,9 @@ html, body, #map {
   flex-direction: column;
 }
 
+.control-bottons {
+  text-align: left;
+  position: absolute;
+  bottom: .5rem;
+  left: .5rem;
+}

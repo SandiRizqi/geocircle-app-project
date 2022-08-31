@@ -92,7 +92,7 @@ export default function DashbordLayout() {
           >
             <div
               className="site-layout-background"
-              style={{ margin: 0, minHeight: 360 }}
+              style={{ margin: 0, position:'relative', bottom:0, top:0}}
             >
               <MapCanvas mode={mode}/>
             </div>
