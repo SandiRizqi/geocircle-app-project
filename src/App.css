@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   height: 100vh;
 }
 
@@ -13,6 +12,7 @@
   bottom: 0;
   top: 0;
   z-index: 0;
+  height: 100%;
   
 }
 html, body, #map {
@@ -50,9 +50,17 @@ html, body, #map {
 
 .control-menu {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0rem;
+  right: 0rem;
   background: #fff;
   z-index: 1;
+  max-height: 85vh;
+  overflow-y: scroll;
+}
+
+.datePicker {
+  margin-top: .5rem;
+  display: flex;
+  flex-direction: column;
 }
 

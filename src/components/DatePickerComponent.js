@@ -10,15 +10,13 @@ export default function DatePickerComponent() {
   return (
     <Space direction="herizontal" className='datePicker'>
       <div>
-        <span>Start Date</span>
+        <p>Start Date :</p>
         <DatePicker onChange={onChange} />
       </div>
       <div>
-        <span>End Date</span>
+        <p>End Date :</p>
         <DatePicker onChange={onChange} />
       </div>
-      
- 
     </Space>
   );
 }

@@ -1,16 +1,20 @@
 import { Collapse, Space, Divider, Button} from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined, FileSearchOutlined } from '@ant-design/icons';
+import { Empty } from 'antd';
 import React from 'react';
 import ImageryListComponent from '../ImageryListComponent';
 import DatePickerComponent from '../DatePickerComponent';
 import AdditionalFilterComponent from '../AdditionalFilterComponent';
 import { useState } from 'react';
 
-const text = `
-  A dog is a type of domesticated animal.
-`;
+const queryHeader = (
+  <div>
+    <FileSearchOutlined/> Search Query
+  </div>
+)
 
 export default function ControlMenu() {
+    const [results, setResults] = useState(null)
     const [active, setActive] = useState("")
     const { Panel } = Collapse;
 
@@ -24,18 +28,19 @@ export default function ControlMenu() {
   return (
     <div className="control-menu">
       <Collapse onChange={onClick} activeKey={active} >
-        <Panel header="Data Query" key="1">
+        <Panel header={queryHeader} key="1">
           <ImageryListComponent />
           <Space direction="vertical">
-            <DatePickerComponent />
+          <DatePickerComponent />
           </Space>
           <Divider />
           <AdditionalFilterComponent />
-          <Button>Reset</Button>
           <Button icon={<SearchOutlined />}>Search</Button>
         </Panel>
-        <Panel header="This is panel header 2" key="2">
-          <p>{text}</p>
+        <Panel header="Results" key="2">
+          {results ?
+           'Ada data' : <Empty/>
+          }
         </Panel>
       </Collapse>
     </div>
