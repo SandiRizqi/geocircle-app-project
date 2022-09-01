@@ -32,13 +32,13 @@ export default function ControlMenu() {
     <div className="control-menu">
       <Collapse onChange={onClick} activeKey={active}>
         <Panel header={queryHeader} key="1">
+          <ToolsMenu />
           <ImageryListComponent />
           <Space direction="vertical">
             <DatePickerComponent />
           </Space>
           <Divider />
           <AdditionalFilterComponent />
-          <ToolsMenu />
           <Button
             icon={<SearchOutlined />}
             onClick={searchAction}

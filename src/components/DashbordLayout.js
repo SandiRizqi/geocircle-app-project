@@ -53,7 +53,7 @@ export default function DashbordLayout() {
             className="site-layout-sub-header-background"
             style={{
               padding: 0,
-              height: '7vh',
+              height: '6vh',
             }}
           >
             <Menu theme={mode} mode="horizontal" className="settings">
@@ -61,7 +61,6 @@ export default function DashbordLayout() {
                 <Dropdown overlay={settingsMenu}>
                   <a href="#/">
                     <Space>
-                      Profile
                       <UserOutlined />
                     </Space>
                   </a>

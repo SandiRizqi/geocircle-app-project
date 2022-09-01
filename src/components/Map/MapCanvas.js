@@ -45,13 +45,13 @@ export default function MapCanvas() {
               attribution='Map data &copy; <a href="https://www.mapbox.org/">Satellite Imagery</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
             />
           </LayersControl.BaseLayer>
-          <LayersControl.BaseLayer name="OpenStreetMap">
+          <LayersControl.BaseLayer name="OpenStreetMap" checked>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
           </LayersControl.BaseLayer>
-          <LayersControl.BaseLayer name="Satellite Mapbox" checked>
+          <LayersControl.BaseLayer name="Satellite Mapbox">
             <TileLayer
               url="https://api.mapbox.com/styles/v1/geo-circle/cl261vqnk000515pmze4smns1/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2VvLWNpcmNsZSIsImEiOiJjbDI2MmU2YW4wMTU4M2JubTV6dW1tZTUxIn0.9ixHJIi6DnNloTYC8aQmKw"
               attribution='Map data &copy; <a href="https://www.mapbox.org/">Satellite Imagery</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
