@@ -33,8 +33,9 @@ html, body, #map {
 
 
 .logo {
-  height: 32px;
-  margin: 16px;
+  height: 7vh;
+  margin: 0px;
+  padding: 1rem;
   text-align: center;
 
 }
@@ -67,8 +68,6 @@ html, body, #map {
 }
 
 .control-bottons {
-  text-align: left;
-  position: absolute;
-  bottom: .5rem;
-  left: .5rem;
+  width: 100%;
+  margin-bottom: 1rem;
 }

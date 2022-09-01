@@ -1,62 +1,54 @@
-import { Collapse, Space, Divider, Button, message} from 'antd';
+import React from 'react';
+import { useState } from 'react';
+import { Collapse, Space, Divider, Button, message } from 'antd';
 import { SearchOutlined, FileSearchOutlined } from '@ant-design/icons';
 import { Empty } from 'antd';
-import React from 'react';
 import ImageryListComponent from '../ImageryListComponent';
 import DatePickerComponent from '../DatePickerComponent';
 import AdditionalFilterComponent from '../AdditionalFilterComponent';
 import ListResults from './ListResults';
+import ToolsMenu from './ToolsMenu';
 
-
-
-import { useState } from 'react';
-
-
-
-
-
-const queryHeader = (
-  <div>
-    <FileSearchOutlined/> Search Query
-  </div>
-)
+const queryHeader = (<div><FileSearchOutlined />Search Query</div>);
 
 export default function ControlMenu() {
-    const [results, setResults] = useState(null)
-    const [active, setActive] = useState("")
-    const [disable, setDisable] =  useState(false)
-    const { Panel } = Collapse;
-
+  const [results, setResults] = useState(null);
+  const [active, setActive] = useState('');
+  const [disable, setDisable] = useState(false);
+  const { Panel } = Collapse;
 
   const onClick = (e) => {
-    setActive(e)
+    setActive(e);
   };
 
   const searchAction = () => {
     message.loading('Loading requested data... .', 0);
-    setDisable(true)
-    console.log('search')
-    setResults([1])
-  }
-
-    
+    setDisable(true);
+    console.log('search');
+    setResults([1]);
+  };
 
   return (
     <div className="control-menu">
-      <Collapse onChange={onClick} activeKey={active} >
+      <Collapse onChange={onClick} activeKey={active}>
         <Panel header={queryHeader} key="1">
           <ImageryListComponent />
           <Space direction="vertical">
-          <DatePickerComponent />
+            <DatePickerComponent />
           </Space>
           <Divider />
           <AdditionalFilterComponent />
-          <Button icon={<SearchOutlined />} onClick={searchAction} disabled={disable}>Search</Button>
+          <ToolsMenu />
+          <Button
+            icon={<SearchOutlined />}
+            onClick={searchAction}
+            disabled={disable}
+          >
+            Search
+          </Button>
         </Panel>
         <Panel header="Results" key="2">
-          {results ?
-           <ListResults/> : <Empty/>
-          }
+          {results ? <ListResults /> : <Empty />}
         </Panel>
       </Collapse>
     </div>

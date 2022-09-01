@@ -17,9 +17,19 @@
         "react"
     ],
     "rules": {
-        "eslint-disable-next-line": "off",
+        "eslint-disable-next-line": 0,
         "linebreak-style": ["error", "windows"],
-        "no-duplicate-imports": 0
-
+        "no-duplicate-imports": 0,
+        "import/no-duplicates":0,
+        "curly":0,
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "comma-dangle": "off",
+        "no-underscore-dangle": 0,
+        "no-trailing-spaces": 0,
+        "no-unused-expressions": "off",
+        "react/jsx-props-no-spreading": "off",
+        "object-curly-newline": 0,
+        "react/jsx-one-expression-per-line": 0
     }
 }
