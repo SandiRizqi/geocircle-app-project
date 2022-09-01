@@ -1,17 +1,15 @@
-import { UserOutlined} from '@ant-design/icons';
-import { Layout, Menu, Dropdown, Button, Space} from 'antd';
-import { Switch } from 'antd';
 import React from 'react';
+import { UserOutlined } from '@ant-design/icons';
+import { Layout, Menu, Dropdown, Space } from 'antd';
+import { Switch } from 'antd';
 import { useState } from 'react';
 import { settingsMenu } from './const';
 import { sideMenu } from './const';
-import MapCanvas from './Map/MapCanvas'
+import MapCanvas from './Map/MapCanvas';
 
 
 
-const { Header, Content, Footer, Sider } = Layout;
-
-
+const { Header, Content, Sider } = Layout;
 export default function DashbordLayout() {
     const [mode, setMode] = useState('dark');
     const [openmenu, setOpenMenu] = useState('inline')
@@ -60,17 +58,18 @@ export default function DashbordLayout() {
             className="site-layout-sub-header-background"
             style={{
               padding: 0,
+              height: "7vh",
             }}
           >
             <Menu theme={mode} mode="horizontal" className="settings">
               <div className="setting-menu-item">
                 <Dropdown overlay={settingsMenu}>
-                  <Button>
+                  <a>
                     <Space>
                       Profile
                       <UserOutlined />
                     </Space>
-                  </Button>
+                  </a>
                 </Dropdown>
               </div>
               <div className="setting-menu-item">
