@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 export default function ListResults() {
-
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
 
@@ -14,7 +13,7 @@ export default function ListResults() {
 
       setLoading(true);
       fetch(
-        "https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo"
+        'https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo'
       )
         .then((res) => res.json())
         .then((body) => {
@@ -71,5 +70,5 @@ export default function ListResults() {
         />
       </InfiniteScroll>
     </div>
-  )
+  );
 }

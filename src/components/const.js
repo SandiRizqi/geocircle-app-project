@@ -1,4 +1,4 @@
-import { SmileOutlined, GlobalOutlined } from '@ant-design/icons';
+import { GlobalOutlined, UserOutlined, PushpinOutlined } from '@ant-design/icons';
 import {
   AppstoreOutlined,
   CalendarOutlined,
@@ -30,9 +30,10 @@ export const settingsMenu = (
             rel="noopener noreferrer"
             href="https://www.antgroup.com"
           >
-            1st menu item
+            Profile
           </a>
         ),
+        icon: <UserOutlined />,
       },
       {
         key: '2',
@@ -42,11 +43,10 @@ export const settingsMenu = (
             rel="noopener noreferrer"
             href="https://www.aliyun.com"
           >
-            2nd menu item (disabled)
+            Settings
           </a>
         ),
-        icon: <SmileOutlined />,
-        disabled: true,
+        icon: <SettingOutlined />
       },
       {
         key: '3',
@@ -54,17 +54,24 @@ export const settingsMenu = (
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.luohanacademy.com"
+            href="https://www.aliyun.com"
           >
-            3rd menu item (disabled)
+            Subscribtions
           </a>
         ),
-        disabled: true,
+        icon: <PushpinOutlined />
       },
       {
         key: '4',
-        danger: true,
-        label: 'a danger item',
+        label: (
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.luohanacademy.com"
+          >
+            Quit
+          </a>
+        ),
       },
     ]}
   />
@@ -91,10 +98,8 @@ export const sideMenu = [
     ]),
   ]),
   getItem('My Orders', 'sub2', <SettingOutlined />, [
-    getItem('Option 7', '7'),
-    getItem('Option 8', '8'),
-    getItem('Option 9', '9'),
-    getItem('Option 10', '10'),
+    getItem('Orders History', '7'),
+    getItem('Orders on Progres', '8'),
   ]),
   getItem(
     <a
