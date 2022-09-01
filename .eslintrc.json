@@ -17,7 +17,7 @@
         "react"
     ],
     "rules": {
-        "eslint-disable-next-line": "off",
+        "eslint-disable-next-line": "off"
 
     }
 }

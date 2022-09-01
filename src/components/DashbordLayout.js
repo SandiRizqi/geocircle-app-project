@@ -97,13 +97,7 @@ export default function DashbordLayout() {
               <MapCanvas mode={mode}/>
             </div>
           </Content>
-          <Footer
-            style={{
-              textAlign: "center",
-            }}
-          >
-            Design @2022 Geocircle Indonesia
-          </Footer>
+          
         </Layout>
       </Layout>
     </>
