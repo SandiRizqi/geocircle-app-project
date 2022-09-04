@@ -18,8 +18,20 @@
 }
 
 .satellite-image-page, .satellite-image-page-item {
-  padding-right: 1rem;
-  padding-left: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  max-height: calc(94vh - .5rem);
+  padding: .5rem;
+}
+
+.imagery-grid {
+  padding: 0.5rem;
+}
+
+.satellite-image-page-item-row {
+  max-height: calc(94vh - 2rem);
+  overflow-y: scroll;
+}
+
+
+.ant-card-cover img {
+  height: 100%;
 }

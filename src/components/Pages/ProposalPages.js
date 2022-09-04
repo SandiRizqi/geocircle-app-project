@@ -5,8 +5,15 @@ export default function ProposalPages() {
   return (
     <div className="proposal-page">
       <Row>
-        <Col span={15}>Coloumn1</Col>
-        <Col span={9}>Coloumn2</Col>
+        <Col xs={24} xl={8}>
+          One of three columns
+        </Col>
+        <Col xs={24} xl={8}>
+          One of three columns
+        </Col>
+        <Col xs={24} xl={8}>
+          One of three columns
+        </Col>
       </Row>
     </div>
   );

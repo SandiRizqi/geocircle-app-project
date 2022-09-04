@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Card, message, Row, Col, Badge, Descriptions, Image } from 'antd';
+import { Card, message, Row, Col, Badge, Descriptions, Image, Skeleton } from 'antd';
 import axios from 'axios';
 
-const gridStyle = {
-    width: '25%',
-    textAlign: 'center',
-  };
+const { Meta } = Card;
 
 export default function SatelliteImagery() {
   const [products, setProducts] = useState([]);
   const imagery = products.filter((_items) => _items.category === 1);
-  const services = products.filter((_items) => _items.category === 3);
-  const [loading, setLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const selectItem = (item) => {
@@ -22,7 +17,6 @@ export default function SatelliteImagery() {
     axios
       .get("https://www.geo-circle.com/api/product/")
       .then((data) => setProducts(data.data))
-      .then(() => setLoading(false))
       .catch(() => message.error("Something error with server"));
   };
 
@@ -32,36 +26,47 @@ export default function SatelliteImagery() {
 
   return (
     <div className="satellite-image-page">
-      <Row>
+      <Row
+        style={{
+          maxHeight: "94vh",
+        }}
+      >
         <Col span={15} className="satellite-image-page-item">
-          <Card title="Satellite Imagery" loading={loading}>
-            {imagery.map((img, idx) => (
-              <Card.Grid
-                style={gridStyle}
-                key={idx}
-                onClick={() => selectItem(img)}
-              >
-                <Image
-                  width={200}
-                  src={img.image}
-                />
-              </Card.Grid>
-            ))}
-          </Card>
-          <Card title="Services" loading={loading}>
-            {services.map((img, idx) => (
-              <Card.Grid
-                style={gridStyle}
-                key={idx}
-                onClick={() => selectItem(img)}
-              >
-                {img.title}
-              </Card.Grid>
-            ))}
-          </Card>
+          <Row className="satellite-image-page-item-row">
+            {imagery ? (
+              imagery.map((img, idx) => (
+                <Col
+                  className="imagery-grid"
+                  key={idx}
+                  onClick={() => selectItem(img)}
+                  xs={24}
+                  xl={8}
+                  md={12}
+                  xxl={6}
+                >
+                  <Card
+                    hoverable
+                    style={{
+                      width: "100%",
+                    }}
+                    className="imagery-grid-item"
+                    cover={<Image alt={img.title} src={img.image} />}
+                  >
+                    <Meta title={img.title} description={img.shortdesc} />
+                  </Card>
+                </Col>
+              ))
+            ) : (
+              <Skeleton />
+            )}
+          </Row>
         </Col>
         <Col span={9} className="satellite-image-page-item">
-          <Descriptions title="Product Info" bordered>
+          <Descriptions
+            title="Product Info"
+            bordered
+            style={{ marginTop: "1rem" }}
+          >
             {selectedProduct ? (
               <>
                 <Descriptions.Item label="Product">
@@ -86,10 +91,10 @@ export default function SatelliteImagery() {
                   11%
                 </Descriptions.Item>
                 <Descriptions.Item label="Product Description">
-                  {selectedProduct.shortdesc}
+                  {selectedProduct.description}
                 </Descriptions.Item>
               </>
-            ) : null }
+            ) : null}
           </Descriptions>
         </Col>
       </Row>

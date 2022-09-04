@@ -1,4 +1,4 @@
-import { GlobalOutlined, UserOutlined, PushpinOutlined } from '@ant-design/icons';
+import { GlobalOutlined, UserOutlined, PushpinOutlined, BarChartOutlined } from '@ant-design/icons';
 import {
   AppstoreOutlined,
   CalendarOutlined,
@@ -9,6 +9,7 @@ import { Menu } from 'antd';
 import ProposalPages from './Pages/ProposalPages';
 import MapCanvas from './Map/MapCanvas';
 import SatelliteImagery from './Pages/SatelliteImagery';
+import PeformancePage from './Pages/PeformancePage';
 
 export const SATELLITE_IMAGERY = [
   'SPOT',
@@ -104,6 +105,7 @@ export const sideMenu = [
     getItem('Orders History', '7'),
     getItem('Orders on Progres', '8'),
   ]),
+  getItem('Peformance', '9', <BarChartOutlined />),
   getItem(
     <a
       href="https://www.geo-circle.com"
@@ -132,5 +134,10 @@ export const Pages = [
     key: '3',
     content: <SatelliteImagery />,
     label: 'Satellite Imagery'
+  },
+  {
+    key: '9',
+    content: <PeformancePage />,
+    label: 'Peformace'
   }
 ];
