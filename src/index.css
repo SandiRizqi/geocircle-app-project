@@ -1,5 +1,6 @@
 .settings {
   justify-content: flex-end;
+  height: 6vh;
 }
 
 .header-menu {
@@ -9,4 +10,16 @@
 
 .setting-menu-item{
   margin-right: 1rem;
+}
+
+
+.proposal-page {
+  padding: 1rem;
+}
+
+.satellite-image-page, .satellite-image-page-item {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

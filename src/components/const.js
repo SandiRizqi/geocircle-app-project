@@ -6,6 +6,9 @@ import {
   SettingOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
+import ProposalPages from './Pages/ProposalPages';
+import MapCanvas from './Map/MapCanvas';
+import SatelliteImagery from './Pages/SatelliteImagery';
 
 export const SATELLITE_IMAGERY = [
   'SPOT',
@@ -28,7 +31,7 @@ export const settingsMenu = (
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.antgroup.com"
+            href="https://www.geo-circle.com"
           >
             Profile
           </a>
@@ -41,7 +44,7 @@ export const settingsMenu = (
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.aliyun.com"
+            href="https://www.geo-circle.com"
           >
             Settings
           </a>
@@ -54,7 +57,7 @@ export const settingsMenu = (
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.aliyun.com"
+            href="https://www.geo-circle.com/products"
           >
             Subscribtions
           </a>
@@ -89,12 +92,12 @@ function getItem(label, key, icon, children) {
 export const sideMenu = [
   getItem('Find Imagery', '1', <GlobalOutlined />),
   getItem('Proposals', '2', <CalendarOutlined />),
-  getItem('Services', 'sub1', <AppstoreOutlined />, [
-    getItem('Option 3', '3'),
-    getItem('Option 4', '4'),
-    getItem('Submenu', 'sub1-2', null, [
-      getItem('Option 5', '5'),
-      getItem('Option 6', '6'),
+  getItem('Products', 'sub1', <AppstoreOutlined />, [
+    getItem('Satellite Imagery', '3', <AppstoreOutlined />),
+    getItem('Analytics', '4'),
+    getItem('Geo-AI', 'sub1-2', null, [
+      getItem('Software', '5'),
+      getItem('Services', '6'),
     ]),
   ]),
   getItem('My Orders', 'sub2', <SettingOutlined />, [
@@ -112,4 +115,22 @@ export const sideMenu = [
     'link',
     <LinkOutlined />
   ),
+];
+
+export const Pages = [
+  {
+    key: '1',
+    content: <MapCanvas />,
+    label: 'Find Imagery'
+  },
+  {
+    key: '2',
+    content: <ProposalPages />,
+    label: 'Proposals'
+  },
+  {
+    key: '3',
+    content: <SatelliteImagery />,
+    label: 'Satellite Imagery'
+  }
 ];
