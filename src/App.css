@@ -46,8 +46,8 @@ html, body, #map {
 }
 
 .site-layout-background {
-  background: #fff;
   height: 100%;
+  
 }
 
 
@@ -80,4 +80,17 @@ html, body, #map {
 
 .imagery-grid-item{
   background: aqua;
+}
+
+.details {
+  background: #fff;
+}
+
+.order-procedure{
+  padding: 1rem;
+  margin: 1rem;
+  bottom: 10vh;
+  right: 0;
+  left: 0;
+  position: absolute;
 }

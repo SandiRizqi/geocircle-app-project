@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Card, message, Row, Col, Badge, Descriptions, Image, Skeleton } from 'antd';
+import { Card, message, Row, Col, Badge, Descriptions, Image, Skeleton, Steps } from 'antd';
 import axios from 'axios';
+import { UserOutlined, SearchOutlined, SendOutlined, FileProtectOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
+const { Step } = Steps;
 
 export default function SatelliteImagery() {
   const [products, setProducts] = useState([]);
@@ -29,9 +31,17 @@ export default function SatelliteImagery() {
       <Row
         style={{
           maxHeight: "94vh",
+          overflowX: "scroll",
         }}
       >
-        <Col span={15} className="satellite-image-page-item">
+        <Col
+          xxl={15}
+          xl={12}
+          md={12}
+          sm={12}
+          xs={6}
+          className="satellite-image-page-item"
+        >
           <Row className="satellite-image-page-item-row">
             {imagery ? (
               imagery.map((img, idx) => (
@@ -40,8 +50,9 @@ export default function SatelliteImagery() {
                   key={idx}
                   onClick={() => selectItem(img)}
                   xs={24}
-                  xl={8}
-                  md={12}
+                  sm={24}
+                  xl={12}
+                  md={18}
                   xxl={6}
                 >
                   <Card
@@ -61,11 +72,20 @@ export default function SatelliteImagery() {
             )}
           </Row>
         </Col>
-        <Col span={9} className="satellite-image-page-item">
+        <Col
+          xxl={9}
+          xl={12}
+          md={12}
+          sm={12}
+          xs={18}
+          className="satellite-image-page-item details"
+        >
           <Descriptions
             title="Product Info"
             bordered
             style={{ marginTop: "1rem" }}
+            column={{ xxl: 3, xl: 2, lg: 1 }}
+            size="large"
           >
             {selectedProduct ? (
               <>
@@ -94,8 +114,21 @@ export default function SatelliteImagery() {
                   {selectedProduct.description}
                 </Descriptions.Item>
               </>
-            ) : null}
+            ) : <Skeleton />}
           </Descriptions>
+          <div className="order-procedure">
+            <h3>Order Precedure</h3>
+            <Steps responsive>
+              <Step status="finish" title="Login" icon={<UserOutlined />} />
+              <Step
+                status="wait"
+                title="Find Imagery"
+                icon={<SearchOutlined />}
+              />
+              <Step status="wait" title="Ask Proposal" icon={<SendOutlined />} />
+              <Step status="wait" title="Proposal Verification" icon={<FileProtectOutlined />} />
+            </Steps>
+          </div>
         </Col>
       </Row>
     </div>
