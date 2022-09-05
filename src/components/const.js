@@ -1,9 +1,11 @@
-import { GlobalOutlined, UserOutlined, PushpinOutlined, BarChartOutlined } from '@ant-design/icons';
+import { GlobalOutlined, UserOutlined, PushpinOutlined, PieChartOutlined, PictureOutlined, LineChartOutlined } from '@ant-design/icons';
 import {
   AppstoreOutlined,
   CalendarOutlined,
   LinkOutlined,
   SettingOutlined,
+  DeploymentUnitOutlined,
+  ShoppingCartOutlined
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import ProposalPages from './Pages/ProposalPages';
@@ -94,18 +96,18 @@ export const sideMenu = [
   getItem('Find Imagery', '1', <GlobalOutlined />),
   getItem('Proposals', '2', <CalendarOutlined />),
   getItem('Products', 'sub1', <AppstoreOutlined />, [
-    getItem('Satellite Imagery', '3', <AppstoreOutlined />),
-    getItem('Analytics', '4'),
-    getItem('Geo-AI', 'sub1-2', null, [
+    getItem('Satellite Imagery', '3', <PictureOutlined />),
+    getItem('Analytics', '4', <LineChartOutlined />),
+    getItem('Geo-AI', 'sub1-2', <DeploymentUnitOutlined />, [
       getItem('Software', '5'),
       getItem('Services', '6'),
     ]),
   ]),
-  getItem('My Orders', 'sub2', <SettingOutlined />, [
+  getItem('My Orders', 'sub2', <ShoppingCartOutlined />, [
     getItem('Orders History', '7'),
     getItem('Orders on Progres', '8'),
   ]),
-  getItem('Peformance', '9', <BarChartOutlined />),
+  getItem('Peformance', '9', <PieChartOutlined />),
   getItem(
     <a
       href="https://www.geo-circle.com"

@@ -36,6 +36,7 @@
         "quotes": 0,
         "no-self-import": 0,
         "import/no-cycle": 0,
-        "react/no-array-index-key": 0
+        "react/no-array-index-key": 0,
+        "import/newline-after-import": "off"
     }
 }

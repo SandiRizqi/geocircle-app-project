@@ -14,8 +14,9 @@
 
 
 .proposal-page {
-  padding: 1rem;
+  padding: 2rem;
   height: 94vh;
+  background-color: #FFF;
 }
 
 .satellite-image-page, .satellite-image-page-item {
