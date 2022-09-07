@@ -17,6 +17,7 @@
   padding: 2rem;
   height: 94vh;
   background-color: #FFF;
+  overflow-y: scroll;
 }
 
 .satellite-image-page, .satellite-image-page-item {
